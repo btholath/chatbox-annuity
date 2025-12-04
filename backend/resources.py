@@ -1,18 +1,9 @@
-from pypdf import PdfReader
 import json
 
-# Read LinkedIn PDF
-try:
-    reader = PdfReader("./data/linkedin.pdf")
-    linkedin = ""
-    for page in reader.pages:
-        text = page.extract_text()
-        if text:
-            linkedin += text
-except FileNotFoundError:
-    linkedin = "LinkedIn profile not available"
+# Note: LinkedIn PDF is no longer used for this platform
+linkedin = "Not applicable - this is an Annuity Advisor Intelligence platform, not a personal profile."
 
-# Read other data files
+# Read platform data files
 with open("./data/summary.txt", "r", encoding="utf-8") as f:
     summary = f.read()
 

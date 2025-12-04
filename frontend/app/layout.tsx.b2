@@ -1,6 +1,4 @@
-// app/layout.tsx
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -16,14 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://your-domain.com"; // TODO: replace with real domain
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title:
-    "Annuity Advisor Intelligence | SEC Variable Insurance Product Analysis Platform",
-  description:
-    "AI-powered platform for financial advisors to analyze variable annuities and RILAs using official SEC VIP data. Product comparisons, fee analysis, rider research, and compliance tools.",
+  title: "Annuity Advisor Intelligence | SEC Variable Insurance Product Analysis Platform",
+  description: "AI-powered platform for financial advisors to analyze variable annuities and RILAs using official SEC VIP data. Product comparisons, fee analysis, rider research, and compliance tools.",
   keywords: [
     "variable annuities",
     "RILA",
@@ -40,25 +33,24 @@ export const metadata: Metadata = {
     "SEC Forms N-4",
     "SEC Forms N-6",
     "annuity comparison",
-    "variable insurance products",
-  ],
+    "variable insurance products"
+  ].join(", "),
   authors: [{ name: "Annuity Advisor Intelligence" }],
   creator: "Annuity Advisor Intelligence",
   publisher: "Annuity Advisor Intelligence",
   category: "Financial Services",
 
+  // OpenGraph metadata for social sharing
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
+    url: "https://your-domain.com",
     title: "Annuity Advisor Intelligence | SEC Variable Insurance Analysis",
-    description:
-      "AI-powered research assistant for financial advisors. Analyze variable annuities and RILAs using official SEC VIP data.",
+    description: "AI-powered research assistant for financial advisors. Analyze variable annuities and RILAs using official SEC VIP data.",
     siteName: "Annuity Advisor Intelligence",
     images: [
       {
-        // best practice: absolute URL
-        url: `${siteUrl}/og-image.jpg`,
+        url: "/og-image.jpg", // You'll need to create this
         width: 1200,
         height: 630,
         alt: "Annuity Advisor Intelligence Platform",
@@ -66,13 +58,15 @@ export const metadata: Metadata = {
     ],
   },
 
+  // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
     title: "Annuity Advisor Intelligence",
     description: "AI Research Assistant for Variable Insurance Products",
-    images: [`${siteUrl}/twitter-image.jpg`],
+    images: ["/twitter-image.jpg"], // You'll need to create this
   },
 
+  // Robots metadata
   robots: {
     index: true,
     follow: true,
@@ -85,6 +79,7 @@ export const metadata: Metadata = {
     },
   },
 
+  // Additional metadata
   applicationName: "Annuity Advisor Intelligence",
   referrer: "origin-when-cross-origin",
   formatDetection: {
@@ -92,17 +87,23 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+
+  // Verification codes (add when you have them)
+  // verification: {
+  //   google: "your-google-verification-code",
+  //   yandex: "your-yandex-verification-code",
+  // },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Favicon / PWA icons */}
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -110,12 +111,17 @@ export default function RootLayout({
 
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#2563eb" />
+
+        {/* Additional SEO tags */}
+        <meta name="format-detection" content="telephone=no" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gray-50`}
       >
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

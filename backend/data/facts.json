@@ -1,21 +1,59 @@
 {
-  "full_name": "Biju Tholath",
-  "name": "Biju",
-  "current_role": "AI/ML Engineer",
-  "location": "Los Angeles",
-  "email": "biju.tholath@gmail.com",
-  "linkedin": "linkedin.com/in/biju-tholath/",
-  "specialties": [
-    "Your specialty 1",
-    "Your specialty 2",
-    "Your specialty 3"
+  "platform_name": "Annuity Advisor Intelligence",
+  "short_name": "AAI",
+  "platform_type": "SEC Variable Insurance Products Data Platform",
+  "purpose": "Help financial advisors analyze and compare variable annuities and registered index-linked annuities",
+  "data_sources": [
+    "SEC Variable Insurance Product (VIP) Data Sets",
+    "SEC Forms N-3, N-4, N-6 (XBRL)",
+    "Investment Company Series and Class Information"
   ],
-  "years_experience": 10,
-  "education": [
-    {
-      "degree": "Bachelor degree in Commerce - Accounting",
-      "institution": "University of Calicut",
-      "year": "1991"
-    }
-  ]
+  "coverage": {
+    "product_types": [
+      "Variable Annuities",
+      "Registered Index-Linked Annuities (RILA)",
+      "Variable Life Insurance"
+    ],
+    "major_carriers": [
+      "Athene",
+      "Jackson National",
+      "Lincoln Financial",
+      "Prudential",
+      "Equitable",
+      "Nationwide",
+      "TIAA",
+      "MetLife"
+    ],
+    "data_points": [
+      "Product names and identifiers",
+      "Fee structures (M&E, admin, surrender charges)",
+      "Investment options and subaccounts",
+      "Rider features and costs",
+      "Guarantees and contract features",
+      "Performance metrics"
+    ]
+  },
+  "update_frequency": "Quarterly (as SEC filings are updated)",
+  "data_format": "CSV/TSV (XBRL-extracted)",
+  "license": "Public domain - no registration required",
+  "capabilities": [
+    "Product comparison and analysis",
+    "Fee structure breakdown",
+    "Rider feature comparison",
+    "Investment option analysis",
+    "Carrier product lineup overview",
+    "Regulatory compliance data access"
+  ],
+  "target_users": [
+    "Financial Advisors",
+    "RIAs (Registered Investment Advisors)",
+    "Insurance Brokers",
+    "Annuity Researchers",
+    "Compliance Officers"
+  ],
+  "sec_resources": {
+    "vip_data_sets": "https://www.sec.gov/data-research/sec-markets-data/variable-insurance-product-data-sets",
+    "documentation": "https://www.sec.gov/files/variable-insurance-product-data-sets.pdf",
+    "investment_company_data": "https://www.sec.gov/about/opendatasetsshtmlinvestment_company"
+  }
 }
